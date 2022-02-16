@@ -12,7 +12,6 @@ void swap(int *a, int *b)
 	*b = t;
 }
 
-/* finds partition pos */
 /**
  *partition - partition
  *@array: array
@@ -23,17 +22,17 @@ void swap(int *a, int *b)
  */
 int partition(int *array, int low, int high, size_t size)
 {
-	
+
 
 	int i, pivot = array[high], j;
 
-	
+
 
 	for (j = low, i = low - 1 ; j < high; j++)
 	{
 		if (array[j] <= pivot)
 		{
-			
+
 			i++;
 
 			swap(&array[i], &array[j]);
@@ -43,11 +42,11 @@ int partition(int *array, int low, int high, size_t size)
 
 	}
 
-	
+
 	swap(&array[i + 1], &array[high]);
 	if (array[high] != array[i + 1])
 		print_array(array, size);
-	
+
 	return (i + 1);
 }
 /**
